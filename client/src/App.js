@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, AppBar, Typography, Grow, Grid, Button, Toolbar, Box } from '@mui/material'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useDispatch } from 'react-redux'
 
+import { getPosts } from './actions/posts'
 import Form from './components/Form/Form'
 import Posts from './components/Posts/Posts'
 import hookahPic from './images/hookahtable.jpg'
@@ -9,7 +11,11 @@ import hookahPic from './images/hookahtable.jpg'
 const theme = createTheme({ palette: { mode: 'dark' } })
 
 const App = () => {
+  const dispatch = useDispatch()
 
+  useEffect(() => {
+    dispatch(getPosts)
+  }, [dispatch])
 
   return (
     <ThemeProvider theme={theme}>

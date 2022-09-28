@@ -1,14 +1,21 @@
 import React from 'react'
+import { Grid, CircularProgress } from '@mui/material'
+import { useSelector } from 'react-redux'
+
 import Post from './Post/Post'
 
 const Posts = () => {
-  return (
-    <>
-      <h1>Posts</h1>
-      <Post />
-      <Post />
+  const posts = useSelector((state) => state.posts)
 
-    </>
+  console.log(posts)
+
+  return (
+    !posts.length ? <CircularProgress /> : (
+      <Grid>
+
+        
+      </Grid>
+    )
 
   )
 }
