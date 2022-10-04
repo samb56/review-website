@@ -20,7 +20,7 @@ app.use('/posts', postRoutes)
 const CONNECTION_URL = 'mongodb+srv://hookahreview:fakepassword99@cluster0.4pnmbwl.mongodb.net/?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000
 
-mongoose.connect(CONNECTION_URL).then(() => { console.log(`server running on port: ${PORT} `) })
+mongoose.connect(CONNECTION_URL).then(() => { app.listen(PORT, () => console.log(`server running on port: ${PORT} `)); })
 
 // mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 //   .then(() => app.listen(PORT, () => console.log(`server running on port: ${PORT} `)))
