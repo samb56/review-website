@@ -5,10 +5,13 @@ import ClearIcon from '@mui/icons-material/Clear';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import useStyles from './styles'
 import moment from 'moment'
+import { useDispatch } from 'react-redux'
+
+import { deletePost } from '../../../actions/posts'
 
 const Post = ({ post, setCurrentId }) => {
   const { classes } = useStyles()
-
+  const dispatch = useDispatch()
 
   return (
 
@@ -39,7 +42,7 @@ const Post = ({ post, setCurrentId }) => {
             {post.likeCount}
           </ThumbUpIcon>
         </Button>
-        <Button size="small" color='primary' onClick={() => { }}>
+        <Button size="small" color='primary' onClick={() => { dispatch(deletePost(post._id))}}>
           <ClearIcon fontSize="small">
             Delete
           </ClearIcon>
