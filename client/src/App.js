@@ -1,12 +1,14 @@
-import React, { useState,useEffect } from 'react'
-import { Container, AppBar, Typography, Grow, Grid } from '@mui/material'
+import React, { useState, useEffect } from 'react'
+import { Container, Grow, Grid } from '@mui/material'
 import { useDispatch } from 'react-redux'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import { getPosts } from './actions/posts'
 import Posts from './components/Posts/Posts'
 import Form from './components/Form/Form'
-import memories from './images/hookah clouds.jpg'
+
 import useStyles from './styles'
+import Navbar from './components/Navbar/Navbar'
 
 const App = () => {
   const [currentId, setCurrentId] = useState(null)
@@ -14,15 +16,12 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-  // dispatch(getPosts)
-  getPosts()(dispatch)
+    // dispatch(getPosts)
+    getPosts()(dispatch)
   }, [currentId, dispatch])
   return (
     <Container maxWidth='lg'>
-      <AppBar className={classes.appBar} position='static' color='inherit'>
-        <Typography className={classes.heading} variant='h2' align="center">Memories</Typography>
-        <img className={classes.image} src={memories} alt="memories" height="60" />
-      </AppBar>
+      <Navbar />
 
       <Grow in>
         <Container>
