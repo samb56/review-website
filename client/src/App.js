@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Container, Grow, Grid } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import LoginButton from './components/Login/LoginButton'
+import LogoutButton from './components/Login/Logout'
 
 import { getPosts } from './actions/posts'
 import Posts from './components/Posts/Posts'
@@ -14,6 +16,7 @@ const App = () => {
   const [currentId, setCurrentId] = useState(null)
   const { classes } = useStyles()
   const dispatch = useDispatch()
+  
 
   useEffect(() => {
     // dispatch(getPosts)
@@ -21,6 +24,9 @@ const App = () => {
   }, [currentId, dispatch])
   return (
     <Container maxWidth='lg'>
+      {/* <h1>Auth0 Login</h1>
+      <LoginButton />
+      <LogoutButton /> */}
       <Navbar />
 
       <Grow in>
