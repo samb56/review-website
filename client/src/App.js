@@ -24,9 +24,9 @@ const App = () => {
   }, [currentId, dispatch])
   return (
     <Container maxWidth='lg'>
-      {/* <h1>Auth0 Login</h1>
+      <h1>Auth0 Login</h1>
       <LoginButton />
-      <LogoutButton /> */}
+      <LogoutButton />
       <Navbar />
 
       <Grow in>

@@ -19,7 +19,7 @@ const store = createStore(reducers, compose(applyMiddleware(thunk)))
 ReactDOM.render(
   <Provider store={store}>
     <Auth0Provider domain={domain} clientId={clientId} redirectUri={window.location.origin}>
-    <App />
+      <App />
     </Auth0Provider>
   </Provider >,
   document.getElementById('root')
