@@ -8,10 +8,10 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./Server/server.js",
+    "start": "node ./server/index.js",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": " cd ./Server && npm i && cd ../client && npm i",
-    "seed": "cd ./Server && npm run seed",
+    "install": "cd ./server && npm i && cd ../client && npm i",
+    "seed": "cd ./server && npm run seed",
     "build": "cd client && npm run build"
   },
   "repository": {
