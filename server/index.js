@@ -5,11 +5,13 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import postRoutes from './routes/posts.js'
 import path from 'path'
+import { fileURLToPath } from 'url';
 
 const app = express()
 dotenv.config()
 // app.use('/posts', postRoutes)
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }))
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
