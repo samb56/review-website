@@ -9,6 +9,7 @@ import path from 'path'
 const app = express()
 dotenv.config()
 // app.use('/posts', postRoutes)
+const __dirname = path.dirname(__filename);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }))
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
