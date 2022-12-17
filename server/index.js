@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import postRoutes from './routes/posts.js'
+import path from 'path'
 
 const app = express()
 dotenv.config()
@@ -15,13 +16,13 @@ app.use(cors())
 
 app.use('/posts', postRoutes)
 
-
+app.use(express.static(path.join(__dirname, '../client/build')))
 
 const CONNECTION_URL = process.env.CONNECTION_URL
 const PORT = process.env.PORT || 5000
 
 
-app.use(express.static(path.join(__dirname, '../client/build')))
+
 // const CONNECTION_URL = 'mongodb+srv://hookahreview:fakepassword99@cluster0.4pnmbwl.mongodb.net/?retryWrites=true&w=majority'
 // const PORT = process.env.PORT || 5000
 
